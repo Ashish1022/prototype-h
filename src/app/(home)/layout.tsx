@@ -9,9 +9,9 @@ export default function RootLayout({
     return (
         <div className='flex flex-col min-h-screen'>
              <Navbar />
-             <div className='flex-1 bg-[#f4f4f0]'>
+             <main className='flex-1 bg-[#f4f4f0]'>
                 {children}
-            </div>
+            </main>
             <Footer />
         </div>
 

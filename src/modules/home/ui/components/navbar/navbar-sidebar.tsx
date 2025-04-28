@@ -17,7 +17,11 @@ interface Props {
 export const NavbarSidebar = ({ items, onOpenChange, open }: Props) => {
     return (
         <Sheet open={open} onOpenChange={onOpenChange}>
-            <SheetContent side="left" className="p-0 transition-none">
+            <SheetContent 
+            side="left" 
+            className="p-0 transition-none"
+            aria-label="Navigation menu"
+            >
                 <SheetHeader className="p-4 border-b">
                     <SheetTitle>
                         Menu

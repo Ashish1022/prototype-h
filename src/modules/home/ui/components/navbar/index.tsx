@@ -46,7 +46,7 @@ export const Navbar = () => {
     return (
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
             <NavbarSidebar onOpenChange={setIsSidebarOpen} open={isSidebarOpen} items={navbarItems} />
-            <Link href={"/"} className="pl-6 flex items-center">
+            <Link href={"/"} className="pl-6 flex items-center" aria-label="hub homepage">
                 <span className={cn("text-5xl font-semibold", poppins.className)}>funroad</span>
             </Link>
             <div className="lg:flex items-center gap-4 hidden">
@@ -80,7 +80,14 @@ export const Navbar = () => {
                 </Button>
             </div >
             <div className="flex lg:hidden items-center justify-center">
-                <Button className="size-12 border-transparent bg-white" variant="ghost" onClick={() => setIsSidebarOpen(true)}>
+                <Button
+                 className="size-12 border-transparent bg-white" 
+                 variant="ghost"
+                  onClick={() => setIsSidebarOpen(true)}
+                  aria-label="Open navigation menu"
+                  aria-expanded={isSidebarOpen}
+                  aria-controls="mobile-navigation"
+                  >
                     <MenuIcon />
                 </Button>
             </div>

@@ -146,7 +146,7 @@ const seed = async () => {
             data: {
                 name: category.name,
                 slug: category.slug,
-                color: category.slug,
+                color: category.color,
                 parent: null
             }
         })

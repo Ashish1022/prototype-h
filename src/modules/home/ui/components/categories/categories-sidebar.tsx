@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { CategoriesGetManyOutput } from "@/modules/categories/types";
 import { useTRPC } from "@/trpc/client";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronLeftIcon, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -72,7 +72,7 @@ export const CategoriesSidebar = ({ open, onOpenChange }: { open: boolean; onOpe
                             onClick={handleBackClick}
                             className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium cursor-pointer"
                         >
-                            <ChevronLeftIcon className="size-4 mr-2" />
+                            <ChevronLeft className="size-4 mr-2" />
                             Back
                         </button>
                     )}

@@ -6,8 +6,9 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { SubcategoryMenu } from "./subcategory-menu";
+import { CategoriesGetManyOutput } from "@/modules/categories/types";
 
-export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: { category: any; isActive: boolean; isNavigationHovered: boolean }) => {
+export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: { category: CategoriesGetManyOutput[1]; isActive: boolean; isNavigationHovered: boolean }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: { 
         >
             <div className="relative">
                 <Button
+                    asChild
                     variant="elevated"
                     className={cn("h-11 px-4 border-transparent bg-transparent rounded-full hover:bg-white hover:border-primary text-black",
                         isActive && !isNavigationHovered && "bg-white border-primary",

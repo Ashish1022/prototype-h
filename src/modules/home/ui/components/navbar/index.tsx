@@ -45,10 +45,13 @@ export const Navbar = () => {
 
     return (
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
+
             <NavbarSidebar onOpenChange={setIsSidebarOpen} open={isSidebarOpen} items={navbarItems} />
+
             <Link href={"/"} className="pl-6 flex items-center" aria-label="hub homepage">
                 <span className={cn("text-5xl font-semibold", poppins.className)}>funroad</span>
             </Link>
+
             <div className="lg:flex items-center gap-4 hidden">
                 {navbarItems.map((item) => (
                     <NavbarItem
@@ -60,6 +63,7 @@ export const Navbar = () => {
                     </NavbarItem>
                 ))}
             </div>
+
             <div className="hidden lg:flex">
                 <Button
                     asChild
@@ -79,6 +83,7 @@ export const Navbar = () => {
                     </Link>
                 </Button>
             </div >
+
             <div className="flex lg:hidden items-center justify-center">
                 <Button
                  className="size-12 border-transparent bg-white" 
@@ -91,6 +96,7 @@ export const Navbar = () => {
                     <MenuIcon />
                 </Button>
             </div>
+            
         </nav>
     )
 }

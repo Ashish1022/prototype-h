@@ -24,6 +24,18 @@ export const SearchInput = ({ disabled }: { disabled?: boolean }) => {
             >
                 <ListFilterIcon />
             </Button>
+            {/* {session.data?.user && (
+                <Button
+                    asChild
+                    variant="elevated"
+                    className=""
+                >
+                    <Link href={"/library"}>
+                        <BookmarkCheckIcon />
+                        Library
+                    </Link>
+                </Button>
+            )} */}
         </div>
     )
 }

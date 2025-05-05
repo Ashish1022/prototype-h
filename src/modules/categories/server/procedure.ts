@@ -6,23 +6,20 @@ export const categoriesRouter = createTRPCRouter({
         const data = await ctx.db.find({
             collection: "categories",
             depth: 1,
-            pagination: false,
             where: {
                 parent: {
                     exists: false
-                },
-            },
-            sort: "name"
+                }
+            }
         });
 
         const formattedData = data.docs.map((doc) => ({
             ...doc,
             subcategories: (doc.subcategories?.docs ?? []).map((subdoc) => ({
-                subcategories: undefined,
                 ...(subdoc as Category),
             })),
         }));
-
-        return formattedData
+        
+        return formattedData;
     }),
 })

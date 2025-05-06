@@ -8,7 +8,7 @@ import { useRef, useState } from "react";
 import { SubcategoryMenu } from "./subcategory-menu";
 import { CategoriesGetManyOutput } from "@/modules/categories/types";
 
-export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: { category: CategoriesGetManyOutput[1]; isActive: boolean; isNavigationHovered: boolean }) => {
+export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: { category: CategoriesGetManyOutput[number]; isActive: boolean; isNavigationHovered: boolean }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);

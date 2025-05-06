@@ -7,8 +7,11 @@ import { makeQueryClient } from './query-client';
 import { appRouter } from './routers/_app';
 
 export const getQueryClient = cache(makeQueryClient);
+
 export const trpc = createTRPCOptionsProxy({
-  ctx: createTRPCContext,
-  router: appRouter,
-  queryClient: getQueryClient,
+    ctx: createTRPCContext,
+    router: appRouter,
+    queryClient: getQueryClient,
 });
+
+export const caller = appRouter.createCaller(createTRPCContext);

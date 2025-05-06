@@ -17,7 +17,7 @@ export const CategoriesSidebar = ({ open, onOpenChange }: { open: boolean; onOpe
     const router = useRouter();
 
     const [parentCategories, setParentCategories] = useState<CategoriesGetManyOutput | null>(null);
-    const [selectedCategory, setSelectedCategory] = useState<CategoriesGetManyOutput[1] | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<CategoriesGetManyOutput[number] | null>(null);
 
     const currentCategories = parentCategories ?? data ?? [];
 
@@ -27,7 +27,7 @@ export const CategoriesSidebar = ({ open, onOpenChange }: { open: boolean; onOpe
         onOpenChange(open);
     };
 
-    const handleCategoryClick = (category: CategoriesGetManyOutput[1]) => {
+    const handleCategoryClick = (category: CategoriesGetManyOutput[number]) => {
         if (category.subcategories && category.subcategories.length > 0) {
             setParentCategories(category.subcategories as CategoriesGetManyOutput)
             setSelectedCategory(category);

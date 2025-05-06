@@ -9,7 +9,7 @@ import { ListFilterIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Categories = ({ data }: { data: CategoriesGetManyOutput }) => {
-    console.log("CATEGORIES", data)
+
     const containerRef = useRef<HTMLDivElement>(null);
     const measureRef = useRef<HTMLDivElement>(null);
     const viewAllRef = useRef<HTMLDivElement>(null);
@@ -58,7 +58,7 @@ export const Categories = ({ data }: { data: CategoriesGetManyOutput }) => {
                 className="absolute opacity-0 pointer-events-none flex"
                 style={{ position: "fixed", top: -9999, left: -9999 }}
             >
-                {data.map((category: CategoriesGetManyOutput[0]) => (
+                {data.map((category: CategoriesGetManyOutput[number]) => (
                     <div
                         key={category.id}
                     >
@@ -76,7 +76,7 @@ export const Categories = ({ data }: { data: CategoriesGetManyOutput }) => {
                 onMouseEnter={() => setIsAnyHovered(true)}
                 onMouseLeave={() => setIsAnyHovered(false)}
             >
-                {data.slice(0, visibleCount).map((category: CategoriesGetManyOutput[0]) => (
+                {data.slice(0, visibleCount).map((category: CategoriesGetManyOutput[number]) => (
                     <div key={category.id}>
                         <CategoryDropdown
                             category={category}

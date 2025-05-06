@@ -1,7 +1,7 @@
 import { CategoriesGetManyOutput } from "@/modules/categories/types"
 import Link from "next/link";
 
-export const SubcategoryMenu = ({ category, isOpen, position }: { category: CategoriesGetManyOutput[1], isOpen: boolean; position: { left: number; top: number } }) => {
+export const SubcategoryMenu = ({ category, isOpen, position }: { category: CategoriesGetManyOutput[number], isOpen: boolean; position: { left: number; top: number } }) => {
 
     if (!isOpen || !category.subcategories || category.subcategories.length === 0) return null;
 

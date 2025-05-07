@@ -51,7 +51,7 @@ export const ProductList = ({ category }: { category?: string }) => {
             </div>
             <div className="flex justify-center pt-8">
                 {hasNextPage && (
-                    <Button className="font-medium disabled:opacity-50 text-base bg-white" variant="elevated" disabled={isFetchingNextPage} onClick={() => fetchNextPage}>
+                    <Button className="font-medium disabled:opacity-50 text-base bg-white" variant="elevated" disabled={isFetchingNextPage} onClick={() => fetchNextPage()}>
                         Load more...
                     </Button>
                 )}

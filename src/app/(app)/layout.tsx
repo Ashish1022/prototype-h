@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from 'react-hot-toast'
 import { TRPCReactProvider } from "@/trpc/client";
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           <TRPCReactProvider>
             <Toaster />
             {children}
+            <Analytics mode="production" />;
           </TRPCReactProvider>
         </NuqsAdapter>
       </body>

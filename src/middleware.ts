@@ -13,7 +13,7 @@ export default async function middleware(req: NextRequest) {
 
     if (hostname.endsWith(`.${rootDomain}`)) {
         const tenantSubdomain = hostname.replace(`.${rootDomain}`, "");
-        return NextResponse.rewrite(new URL(`/tenants/${tenantSubdomain}${url.pathname}`, req.url));
+        return NextResponse.rewrite(new URL(`/tenant/${tenantSubdomain}${url.pathname}`, req.url));
     }
 
     return NextResponse.next()
